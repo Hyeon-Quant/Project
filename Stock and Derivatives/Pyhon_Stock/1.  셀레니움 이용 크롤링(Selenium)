@@ -19,3 +19,5 @@ driver.get(url)
 driver.page_source
 
 driver.find_element(By.LINK_TEXT, value = '뉴스').click()
+
+#출처 https://github.com/hyunyulhenry/quant_py/blob/main/selenium.ipynb
