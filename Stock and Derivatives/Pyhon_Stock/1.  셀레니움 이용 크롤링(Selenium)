@@ -1,0 +1,21 @@
+import os
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+from bs4 import BeautifulSoup
+
+
+# 아래코드로 해야 오류가 수정됨.
+driver_path = ChromeDriverManager().install()
+correct_driver_path = os.path.join(os.path.dirname(driver_path), "chromedriver.exe")  
+driver = webdriver.Chrome(service=Service(executable_path=correct_driver_path))
+
+
+url = 'https://www.naver.com'
+driver.get(url)
+driver.page_source
+
+driver.find_element(By.LINK_TEXT, value = '뉴스').click()
